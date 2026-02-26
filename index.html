@@ -8,12 +8,12 @@
 #enterOverlay {
   position: fixed;
   inset: 0;
-  background: black;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  cursor: pointer;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
   transition: opacity 0.6s ease;
 }
 
@@ -24,14 +24,17 @@
 
 #enterText {
   color: white;
-  font-size: 28px;
-  letter-spacing: 4px;
-  font-family: sans-serif;
-  transition: transform 0.2s ease;
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-family: monospace;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-#enterOverlay:hover #enterText {
-  transform: scale(1.1);
+#enterText:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 </style>
 
@@ -44,7 +47,7 @@
 
 <body>
   <div id="enterOverlay">
-  <div id="enterText">CLICK TO ENTER</div>
+  <div id="enterText">Click to Enter</div>
 </div>
 
 <div class="volume-slider-container">
@@ -107,24 +110,25 @@ document.getElementById("backgroundAudio").play();
 document.getElementById("volume-slider").addEventListener("input", function() {
 document.getElementById("backgroundAudio").volume = this.value;
 });
-</script>
-
-<script src="gangmonkeys.com_files/script.js"></script>
 <script>
-const overlay = document.getElementById("enterOverlay");
-const music = document.getElementById("backgroundAudio");
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("enterOverlay");
+  const audio = document.getElementById("backgroundAudio");
 
-overlay.addEventListener("click", () => {
-  overlay.classList.add("hidden");
+  document.body.classList.add("no-scroll");
 
-  if (music) {
-    music.volume = 0.5;
-    music.play().catch(() => {});
-  }
+  overlay.addEventListener("click", () => {
+    overlay.classList.add("hidden");
+    document.body.classList.remove("no-scroll");
 
-  setTimeout(() => {
-    overlay.style.display = "none";
-  }, 600);
+    if (audio) {
+      audio.play().catch(() => {});
+    }
+
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 600);
+  });
 });
 </script>
 </body>
