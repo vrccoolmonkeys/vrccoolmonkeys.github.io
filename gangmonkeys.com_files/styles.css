@@ -24,7 +24,7 @@
     background: rgba(0, 0, 0, 0.329);
     border-radius: 8px;
     color: var(--light-purple);
-    overflow-y: hidden;
+    overflow-y: auto;
     width: 80%;
     height: 50vh;
     text-align: start;
