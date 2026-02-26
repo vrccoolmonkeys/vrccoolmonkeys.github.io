@@ -7,13 +7,75 @@
 
 <link rel="stylesheet" href="gangmonkeys.com_files/styles.css">
 <link rel="stylesheet" href="gangmonkeys.com_files/all.min.css">
+
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Hall of vrchatians.">
 </head>
 
 <body>
 
-<h1 style="color:white; text-align:center;">Testing Assets</h1>
+<div class="volume-slider-container">
+<input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.5">
+</div>
 
-<img src="gangmonkeys.com_files/gangmonkeys.gif" width="300">
+<video id="bgVideo" autoplay muted loop playsinline>
+<source src="https://r2.gangmonkeys.com/gangmonkeys/bg.mp4" type="video/mp4">
+</video>
+
+<div class="blur-overlay"></div>
+
+<div class="gif-container">
+<img src="gangmonkeys.com_files/gangmonkeys.gif" alt="Animated Graphic">
+</div>
+
+<div class="button-container">
+<button class="outlined-button" onclick="window.location.href='index.html'">Depot</button>
+<button class="outlined-button" onclick="window.location.href='gangmonkeys.archive.com.html'">Archive</button>
+<button class="outlined-button" onclick="window.location.href='gangmonkeys.hoa.com.html'">HOA</button>
+</div>
+
+<div id="search-container">
+<input type="text" id="search-input" placeholder="Search...">
+</div>
+
+<div class="section-divider"></div>
+
+<div id="users-section">
+<h2 class="section-title">Users</h2>
+<div id="userList" class="card-container">
+
+<div class="kcard glow block"><div class="kcard-body"><p><span class="gold-effect">suffer</span></p></div></div>
+
+
+</div>
+</div>
+
+<div class="section-divider"></div>
+
+<div id="gangs-section">
+<h2 class="section-title">Gangs</h2>
+<div id="gangList" class="card-container">
+
+<div class="kcard"><div class="kcard-body"><p>laughing</p></div></div>
+
+</div>
+</div>
+
+<a href="https://discord.gg/" target="_blank" class="discord-logo">
+<img src="gangmonkeys.com_files/discord.png" alt="Discord Logo">
+</a>
+
+<audio id="backgroundAudio" src="gangmonkeys.com_files/music.ogg" loop></audio>
+
+<script>
+document.addEventListener("click", function() {
+document.getElementById("backgroundAudio").play();
+});
+
+document.getElementById("volume-slider").addEventListener("input", function() {
+document.getElementById("backgroundAudio").volume = this.value;
+});
+</script>
 
 <script src="gangmonkeys.com_files/script.js"></script>
 
