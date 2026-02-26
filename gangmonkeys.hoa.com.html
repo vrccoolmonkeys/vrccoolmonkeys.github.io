@@ -33,8 +33,8 @@
   font-family: sans-serif;
 }
 </style>
-
 </head>
+
 <body>
 
 <div id="enterOverlay">
@@ -65,7 +65,47 @@
 <div class="section-divider"></div>
 
 <div class="profile-card-container">
-<!-- keep all your profile cards exactly as you had them here -->
+
+<div class="profile-card">
+<img src="gangmonkeys.hoa.com_files/courtbox.png" alt="Image">
+<div class="info">
+<h2>Vincent Christopher Procenti</h2>
+<p>[Description here]</p>
+</div>
+</div>
+
+<div class="profile-card">
+<img src="gangmonkeys.hoa.com_files/blue.jpg" alt="Image">
+<div class="info">
+<h2>emmanuel joseph edwards-velazquez</h2>
+<p>[Description here]</p>
+</div>
+</div>
+
+<div class="profile-card">
+<img src="gangmonkeys.hoa.com_files/arab.gif" alt="Image">
+<div class="info">
+<h2>empty</h2>
+<p>[Description here]</p>
+</div>
+</div>
+
+<div class="profile-card">
+<img src="gangmonkeys.hoa.com_files/classified.png" alt="Image">
+<div class="info">
+<h2>Classified</h2>
+<p>[Description here]</p>
+</div>
+</div>
+
+<div class="profile-card">
+<img src="gangmonkeys.hoa.com_files/112.png" alt="Image">
+<div class="info">
+<h2>empty</h2>
+<p>[Description here]</p>
+</div>
+</div>
+
 </div>
 
 <a href="https://discord.gg/" target="_blank" class="discord-logo">
@@ -80,12 +120,10 @@ const music = document.getElementById("backgroundAudio");
 
 overlay.addEventListener("click", () => {
   overlay.classList.add("hidden");
-
   if (music) {
     music.volume = 0.5;
     music.play().catch(() => {});
   }
-
   setTimeout(() => {
     overlay.style.display = "none";
   }, 600);
